@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Netflix Clone',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: backgroundColor,
         textTheme: const TextTheme(

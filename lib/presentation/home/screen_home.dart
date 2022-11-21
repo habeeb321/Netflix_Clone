@@ -101,23 +101,24 @@ class ScreenHome extends StatelessWidget {
 class CustomButtonWidget extends StatelessWidget {
   final String title;
   final IconData icon;
+  final double iconSize;
+  final double textSize;
   const CustomButtonWidget({
     Key? key,
     required this.title,
     required this.icon,
+    required this.iconSize,
+    required this.textSize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(icon, color: kWhiteColor, size: 30),
-        ),
+        Icon(icon, color: kWhiteColor, size: iconSize),
         Text(
           title,
-          style: const TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: textSize),
         ),
       ],
     );
