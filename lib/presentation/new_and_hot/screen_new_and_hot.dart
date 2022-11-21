@@ -8,7 +8,7 @@ class ScreenNewAndHot extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text('ScreenNewAndHot'),
+          child: Text('Hot & New'),
         ),
       ),
     );

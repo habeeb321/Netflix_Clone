@@ -7,3 +7,6 @@ const kHeight20 = SizedBox(height: 20);
 
 const kTotalPadding = EdgeInsets.all(8.0);
 const kAppbarPadding = EdgeInsets.only(left: 8, right: 8);
+
+//border radius
+final kRadius = BorderRadius.circular(10);
