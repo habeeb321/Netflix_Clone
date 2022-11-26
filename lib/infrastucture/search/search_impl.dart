@@ -14,16 +14,22 @@ class SearchIMpl implements SearchService {
   Future<Either<MainFailures, SearchRep>> searchMovies(
       {required String movieQuery}) async {
     try {
-      final Response response =
-          await Dio(BaseOptions()).get(ApiEndPoints.search, queryParameters: {
-        'query': movieQuery,
-      });
+      final Response response = await Dio(BaseOptions()).get(
+        ApiEndPoints.search,
+        queryParameters: {
+          "query": movieQuery,
+        },
+      );
+
       if (response.statusCode == 200 || response.statusCode == 201) {
         final result = SearchRep.fromJson(response.data);
         return Right(result);
       } else {
         return const Left(MainFailures.serverFailure());
       }
+    } on DioError catch (e) {
+      log(e.toString());
+      return const Left(MainFailures.clientFailure());
     } catch (e) {
       log(e.toString());
       return const Left(MainFailures.clientFailure());

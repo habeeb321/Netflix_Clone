@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_clone_app/application/search/search_bloc.dart';
 import 'package:netflix_clone_app/core/constants.dart';
 import 'package:netflix_clone_app/presentation/search/widgets/title.dart';
-
-const imageUrl =
-    'https://www.themoviedb.org/t/p/w130_and_h195_bestv2/pqzjCxPVc9TkVgGRWeAoMmyqkZV.jpg';
 
 class SearchResultWidget extends StatelessWidget {
   const SearchResultWidget({super.key});
@@ -16,15 +15,20 @@ class SearchResultWidget extends StatelessWidget {
         const SearchTextTitle(title: 'Movies & TV'),
         kHeight10,
         Expanded(
-          child: GridView.count(
-            shrinkWrap: true,
-            crossAxisCount: 3,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            childAspectRatio: 1 / 1.4,
-            children: List.generate(20, (index) {
-              return const MainCard();
-            }),
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              return GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 1 / 1.4,
+                children: List.generate(20, (index) {
+                  final movie = state.searchResultList[index];
+                  return MainCard(imageUrl: movie.posterImageUrl);
+                }),
+              );
+            },
           ),
         ),
       ],
@@ -33,13 +37,14 @@ class SearchResultWidget extends StatelessWidget {
 }
 
 class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+  final String imageUrl;
+  const MainCard({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: const DecorationImage(
+        image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(imageUrl),
         ),
