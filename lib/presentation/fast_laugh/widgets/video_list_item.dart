@@ -78,7 +78,7 @@ class VideoListItem extends StatelessWidget {
                             : NetworkImage('$imageAppendUrl$posterPath'),
                       ),
                     ),
-                     ValueListenableBuilder(
+                    ValueListenableBuilder(
                       valueListenable: likedVideosIdsNotifier,
                       builder: (BuildContext context, Set<int> newLikedIds,
                           Widget? _) {

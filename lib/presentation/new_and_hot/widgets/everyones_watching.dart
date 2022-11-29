@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:netflix_clone_app/core/colors/colors.dart';
 import 'package:netflix_clone_app/core/constants.dart';
 import 'package:netflix_clone_app/presentation/home/screen_home.dart';
-import 'package:netflix_clone_app/presentation/new_and_hot/widgets/video_widget.dart';
+import 'package:netflix_clone_app/presentation/widgets/video_widget.dart';
 
 class EveryonesWatchingWidget extends StatelessWidget {
+ final String posterPath;
+  final String movieName;
+  final String description;
   const EveryonesWatchingWidget({
     Key? key,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -15,17 +21,17 @@ class EveryonesWatchingWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kHeight10,
-        const Text(
-          'Friends',
+         Text(
+          movieName,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         kHeight10,
-        const Text(
-          'This hit sitcom follows the merry misadventures of six 20-something pals as they navigate the pitfalls of work, life and love in 1990s Manhattan.',
+         Text(
+          description,
           style: TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
         ),
         kHeight50,
-        const VideoWidget(image: kNewAndHotImage2),
+         VideoWidget(url: posterPath),
         kHeight10,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
