@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clone_app/application/fast_laugh/fast_laugh_bloc.dart';
 import 'package:netflix_clone_app/core/colors/colors.dart';
 import 'package:netflix_clone_app/core/constants.dart';
@@ -77,8 +78,34 @@ class VideoListItem extends StatelessWidget {
                             : NetworkImage('$imageAppendUrl$posterPath'),
                       ),
                     ),
-                    const VideoActionsWidget(
-                        icon: Icons.emoji_emotions, title: 'LOL'),
+                     ValueListenableBuilder(
+                      valueListenable: likedVideosIdsNotifier,
+                      builder: (BuildContext context, Set<int> newLikedIds,
+                          Widget? _) {
+                        final _index = index;
+                        if (newLikedIds.contains(_index)) {
+                          return GestureDetector(
+                            onTap: () {
+                              likedVideosIdsNotifier.value.remove(_index);
+                              likedVideosIdsNotifier.notifyListeners();
+                            },
+                            child: const VideoActionsWidget(
+                              icon: Icons.favorite_outline,
+                              title: 'Liked',
+                            ),
+                          );
+                        }
+
+                        return GestureDetector(
+                          onTap: () {
+                            likedVideosIdsNotifier.value.add(_index);
+                            likedVideosIdsNotifier.notifyListeners();
+                          },
+                          child: const VideoActionsWidget(
+                              icon: Icons.emoji_emotions, title: 'LOL'),
+                        );
+                      },
+                    ),
                     const VideoActionsWidget(icon: Icons.add, title: 'My List'),
                     GestureDetector(
                         onTap: () {
