@@ -36,11 +36,11 @@ class ComingSoonWidget extends StatelessWidget {
               children:  [
                 Text(
                   month,
-                  style: TextStyle(fontSize: 16, color: kGreyColor),
+                  style: const TextStyle(fontSize: 16, color: kGreyColor),
                 ),
                 Text(
                   day,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 4),
@@ -64,7 +64,7 @@ class ComingSoonWidget extends StatelessWidget {
                         movieName,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                             letterSpacing: -2),
@@ -94,7 +94,7 @@ class ComingSoonWidget extends StatelessWidget {
                 kHeight10,
                  Text(
                   movieName,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 kHeight10,
                  Text(
@@ -102,7 +102,7 @@ class ComingSoonWidget extends StatelessWidget {
                   maxLines: 8,
                   overflow: TextOverflow.ellipsis,
                   style:
-                      TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
+                      const TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
                 ),
               ],
             ),

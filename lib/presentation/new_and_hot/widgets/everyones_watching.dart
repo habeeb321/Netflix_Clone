@@ -23,12 +23,12 @@ class EveryonesWatchingWidget extends StatelessWidget {
         kHeight10,
          Text(
           movieName,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         kHeight10,
          Text(
           description,
-          style: TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
+          style: const TextStyle(fontWeight: FontWeight.bold, color: kGreyColor),
         ),
         kHeight50,
          VideoWidget(url: posterPath),

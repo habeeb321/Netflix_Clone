@@ -52,8 +52,8 @@ class ScreenNewAndHot extends StatelessWidget {
             ),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
+        body: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5),
           child: TabBarView(
             children: [
               ComingSoonList(
