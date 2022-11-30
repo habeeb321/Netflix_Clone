@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone_app/core/colors/colors.dart';
 import 'package:netflix_clone_app/core/constants.dart';
-import 'package:netflix_clone_app/presentation/home/screen_home.dart';
+import 'package:netflix_clone_app/presentation/home/widgets/custom_button_widget.dart';
 
 class BackgroundCard extends StatelessWidget {
   const BackgroundCard({super.key});
@@ -28,13 +28,11 @@ class BackgroundCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const CustomButtonWidget(
-                  title: 'My List',
                   icon: Icons.add,
-                  iconSize: 30,
-                  textSize: 18),
-              playButton(),
-              const CustomButtonWidget(
-                  title: 'Info', icon: Icons.info, iconSize: 30, textSize: 18),
+                  title: 'My List',
+                ),
+                playButton(),
+                const CustomButtonWidget(icon: Icons.info, title: 'Info'),
             ],
           ),
         ),

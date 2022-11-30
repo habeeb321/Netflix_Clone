@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netflix_clone_app/core/colors/colors.dart';
 import 'package:netflix_clone_app/core/constants.dart';
 import 'package:netflix_clone_app/presentation/home/screen_home.dart';
+import 'package:netflix_clone_app/presentation/home/widgets/custom_button_widget.dart';
 import 'package:netflix_clone_app/presentation/widgets/video_widget.dart';
 
 class ComingSoonWidget extends StatelessWidget {
@@ -71,20 +72,20 @@ class ComingSoonWidget extends StatelessWidget {
                                          ),
                      ),
                     Row(
-                      children: const [
+                      children:  const [
                         CustomButtonWidget(
-                          title: 'Remind me',
-                          icon: Icons.notifications_outlined,
-                          iconSize: 20,
-                          textSize: 11,
-                        ),
-                        kWidth10,
-                        CustomButtonWidget(
-                          title: 'Info',
-                          icon: Icons.info_outline,
-                          iconSize: 20,
-                          textSize: 11,
-                        ),
+                        icon: Icons.notifications_outlined,
+                        title: "Remind me",
+                        iconSize: 20,
+                        textSize: 10,
+                      ),
+                      kWidth10,
+                      CustomButtonWidget(
+                        icon: Icons.info_outlined,
+                        title: "Info",
+                        iconSize: 20,
+                        textSize: 10,
+                      ),
                         kWidth10,
                       ],
                     )

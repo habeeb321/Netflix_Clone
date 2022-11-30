@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:netflix_clone_app/core/colors/colors.dart';
 import 'package:netflix_clone_app/core/constants.dart';
 import 'package:netflix_clone_app/presentation/home/screen_home.dart';
+import 'package:netflix_clone_app/presentation/home/widgets/custom_button_widget.dart';
 import 'package:netflix_clone_app/presentation/widgets/video_widget.dart';
 
 class EveryonesWatchingWidget extends StatelessWidget {
@@ -37,24 +38,24 @@ class EveryonesWatchingWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
             CustomButtonWidget(
-              title: 'Share',
-              icon: Icons.share,
-              iconSize: 25,
-              textSize: 15,
+              icon: Icons.near_me_outlined,
+              title: "Share",
+              iconSize: 30,
+              textSize: 14,
             ),
             kWidth10,
             CustomButtonWidget(
-              title: 'My List',
               icon: Icons.add,
-              iconSize: 25,
-              textSize: 15,
+              title: "My List",
+              iconSize: 30,
+              textSize: 14,
             ),
             kWidth10,
             CustomButtonWidget(
-              title: 'Play',
               icon: Icons.play_arrow,
-              iconSize: 25,
-              textSize: 15,
+              title: "Play",
+              iconSize: 30,
+              textSize: 14,
             ),
             kWidth10,
           ],
