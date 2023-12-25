@@ -1,16 +1,23 @@
-# netflix_clone_app
+# Netflix Clone
 
-A new Flutter project.
+## Overview
+
+Netflix Clone is a Flutter-based project aiming to replicate the popular Netflix streaming service. It offers a familiar user interface and key features to provide users with a seamless and engaging streaming experience.
+
+## Features
+
+- Mimics the subscription-based streaming service model
+- Clone of the Netflix application with BLOC state management and DDD architecture
+- Tools used: Dio, Flutter Bloc, Get It, Injectable, Share Plus, Video Player, Freezed, Dartz, Json Serializable
+
+## Project Structure
+
+- `lib/`: Contains the main Flutter application code
+- `assets/`: Include any necessary assets such as images or fonts
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone the repository:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/habeeb321/Netflix_Clone.git
